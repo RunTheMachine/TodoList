@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <div class="logo"><i class="fas fa-clipboard-check"></i></div>
     <h1>Ma Todo List</h1>
-    <p><i class="fas fa-info-circle"></i> Les messages affichés par défaut non aucune signification car ils proviennent d'une fausse API.</p>
+    <p><i class="fas fa-info-circle"></i> Les messages affichés par défaut non aucune signification car ils proviennent d'une API de test.</p>
     <todo-list></todo-list>
   </div>
 </template>

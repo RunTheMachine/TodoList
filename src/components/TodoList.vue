@@ -33,6 +33,15 @@ for (var i = 1; i < 6; i++) {
     .then(data => todos.push(data));
 }
 
+
+//  fetch("https://my-json-server.typicode.com/RunTheMachine/fakejson, {mode: 'cors'}")
+//    .then(response => response.json())
+//    .then(data => todos.push(data))
+//    .catch(function(error) {  
+//   console.log('Request failed', error)  
+// });
+
+
 export default {
   name: 'todo-list',
   data () {
@@ -52,6 +61,21 @@ export default {
         title: this.newTodo,
         completed:false,
       })
+
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+
 
       this.newTodo = ''
       this.idForTodo++
