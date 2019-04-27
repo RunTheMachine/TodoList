@@ -1,22 +1,27 @@
 <template>
     <div>
-        <v-flex>
-          <v-text-field
-            placeholder="Penser à ..."
-            class="todo-input"
-            v-model="newTodo" @keyup.enter="addTodo"
-          ></v-text-field>
-        </v-flex>
-      <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item">  
+          <v-flex class="inputfielddiv">
+            <v-text-field
+              class="inputfield"
+              placeholder="Penser à ..."
+              v-model="newTodo" @keyup.enter="addTodo"
+              solo
+            ></v-text-field>
+          </v-flex>
+      <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item"> 
           <div>
-            {{todo.title}} 
+              {{todo.title}} 
           </div>
           <div class="remove-item" @click="removeTodo(index)">
-            X
+            <v-btn fab small color="#41b883">
+              <v-icon color="white">remove</v-icon>
+            </v-btn>
           </div>
       </div>
     </div>
 </template>
+
+
 
 <script>
 export default {
@@ -62,11 +67,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-.todo-input{
-  width:100%;
-  padding: 10px 18px;
-  font-size: 18px;
-  margin-bottom:16px;
+.inputfielddiv{
+  margin-top:3rem;
 }
 
 .todo-item{
@@ -78,6 +80,8 @@ export default {
   padding:10px;
   color:#fff;
   border-radius: 5px;
+  font-size: 1.2rem;
+  padding-left:2rem;
 }
 
 .remove-item{
