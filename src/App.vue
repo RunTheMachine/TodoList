@@ -9,7 +9,9 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 import TodoList from './components/TodoList'
-
+// index.js or main.js
+// index.js or main.js
+import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 export default {
   name: 'App',
   components: {

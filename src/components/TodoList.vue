@@ -1,6 +1,12 @@
 <template>
     <div>
-      <input type="text" class="todo-input" placeholder="Penser à ..." v-model="newTodo" @keyup.enter="addTodo">
+        <v-flex>
+          <v-text-field
+            placeholder="Penser à ..."
+            class="todo-input"
+            v-model="newTodo" @keyup.enter="addTodo"
+          ></v-text-field>
+        </v-flex>
       <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item">  
           <div>
             {{todo.title}} 
