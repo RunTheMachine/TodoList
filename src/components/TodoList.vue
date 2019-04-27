@@ -8,7 +8,7 @@
               solo
             ></v-text-field>
           </v-flex>
-      <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item"> 
+      <div v-for="(todo, index) in todos.slice().reverse()" :keys="todo.id" class="todo-item"> 
           <div>
               {{todo.title}} 
           </div>
@@ -31,8 +31,6 @@ for (var i = 1; i < 6; i++) {
   fetch('https://jsonplaceholder.typicode.com/todos/' + i)
     .then(response => response.json())
     .then(data => todos.push(data));
- //   .then(data => console.log(data))
-
 }
 
 export default {
