@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container">
-    <img class="logo" src="./assets/logo.png">
+    <div class="logo"><i class="fas fa-clipboard-check"></i></div>
+    <h1>Ma Todo List</h1>
     <todo-list></todo-list>
   </div>
 </template>
@@ -34,4 +35,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.logo{
+width:100%;
+text-align: center;
+}
+
+.fas{
+  font-size: 8rem;
+  color:#41b883;
+}
+
+h1{
+  text-align: center;
+}
+
 </style>
