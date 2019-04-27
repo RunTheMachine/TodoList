@@ -24,24 +24,24 @@
 
 
 <script>
+
+// get request
+var todos=[];
+for (var i = 1; i < 6; i++) {
+  fetch('https://jsonplaceholder.typicode.com/todos/' + i)
+    .then(response => response.json())
+    .then(data => todos.push(data));
+ //   .then(data => console.log(data))
+
+}
+
 export default {
   name: 'todo-list',
   data () {
     return {
       newTodo: '',
       idForTodo: 3,
-      todos:[
-        {
-          'id': 1,
-          'title': 'Acheter du lait',
-          'completed' : false,
-        },
-        {
-          'id': 2,
-          'title': 'Rendre le livre à la bibliothèque',
-          'completed' : false,
-        },
-      ]
+      todos: todos,
     }
   },
   methods:{
