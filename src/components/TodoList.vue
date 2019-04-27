@@ -1,6 +1,6 @@
 <template>
     <div>
-      <input type="text" class="todo-input" placeholder="What need to be done" v-model="newTodo" @keyup.enter="addTodo">
+      <input type="text" class="todo-input" placeholder="Penser à ..." v-model="newTodo" @keyup.enter="addTodo">
       <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item">  
           <div>
             {{todo.title}} 
@@ -22,12 +22,12 @@ export default {
       todos:[
         {
           'id': 1,
-          'title': 'Finish Vue Screencast',
+          'title': 'Acheter du lait',
           'completed' : false,
         },
         {
           'id': 2,
-          'title': 'Take over',
+          'title': 'Rendre le livre à la bibliothèque',
           'completed' : false,
         },
       ]
@@ -68,6 +68,10 @@ export default {
   display:flex;
   align-items:center;
   justify-content: space-between;
+  background-color:#34495e;
+  padding:10px;
+  color:#fff;
+  border-radius: 5px;
 }
 
 .remove-item{
