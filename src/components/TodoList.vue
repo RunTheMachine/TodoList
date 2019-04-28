@@ -24,18 +24,19 @@
 
 
 <script>
+// calcul de la taille du json
+// var myObject = [];
+//  fetch("https://my-json-server.typicode.com/RunTheMachine/fakejsonserver/posts/")
+//    .then(response => response.json())
+//    .then(data => myObject.push(data));
+
+// var count = myObject.toString();
+// console.log('ici');
+// console.log(count);
+
 
 // get request
 var todos=[];
-// for (var i = 1; i < 6; i++) {
-//   fetch('https://jsonplaceholder.typicode.com/todos/' + i)
-//     .then(response => response.json())
-//     .then(data => todos.push(data));
-// }
-
-var todos=[];
-
-
 for (var i = 1; i < 4; i++) {
  fetch("https://my-json-server.typicode.com/RunTheMachine/fakejsonserver/posts/" + i)
    .then(response => response.json())
@@ -63,12 +64,12 @@ export default {
         completed:false,
       })
 
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+      fetch('https://my-json-server.typicode.com/RunTheMachine/fakejsonserver/posts/', {
     method: 'POST',
     body: JSON.stringify({
-      title: 'foo',
-      body: 'bar',
-      userId: 1
+      title: 'test',
+      body: 'test',
+      id: 10
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
