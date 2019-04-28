@@ -8,7 +8,7 @@
               solo
             ></v-text-field>
           </v-flex>
-      <div v-for="(todo, index) in todos.slice().reverse()" :keys="todo.id" class="todo-item"> 
+      <div v-for="(todo, index) in todos" :keys="todo.id" class="todo-item"> 
           <div>
               {{todo.title}} 
           </div>
@@ -27,19 +27,20 @@
 
 // get request
 var todos=[];
-for (var i = 1; i < 6; i++) {
-  fetch('https://jsonplaceholder.typicode.com/todos/' + i)
-    .then(response => response.json())
-    .then(data => todos.push(data));
+// for (var i = 1; i < 6; i++) {
+//   fetch('https://jsonplaceholder.typicode.com/todos/' + i)
+//     .then(response => response.json())
+//     .then(data => todos.push(data));
+// }
+
+var todos=[];
+
+
+for (var i = 1; i < 4; i++) {
+ fetch("https://my-json-server.typicode.com/RunTheMachine/fakejsonserver/posts/" + i)
+   .then(response => response.json())
+   .then(data => todos.push(data));
 }
-
-
-//  fetch("https://my-json-server.typicode.com/RunTheMachine/fakejson, {mode: 'cors'}")
-//    .then(response => response.json())
-//    .then(data => todos.push(data))
-//    .catch(function(error) {  
-//   console.log('Request failed', error)  
-// });
 
 
 export default {
